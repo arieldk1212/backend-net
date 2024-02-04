@@ -1,0 +1,4 @@
+*.txt
+Migrations
+/Migrations
+.vscode
