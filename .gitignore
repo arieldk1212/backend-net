@@ -2,3 +2,8 @@
 Migrations
 /Migrations
 .vscode
+*.sln
+/bin
+bin
+obj
+/obj
