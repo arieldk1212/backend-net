@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using api.Data;
+using api.Dtos.Expense;
+using api.Mappers;
 
 namespace api.Controllers
 {
@@ -20,7 +22,8 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var expenses = _context.Expenses.ToList();
+            var expenses = _context.Expenses.ToList()
+                .Select(s => s.ToExpenseDto());
 
             return Ok(expenses);
         }
@@ -33,7 +36,7 @@ namespace api.Controllers
             if (expense == null) {
                 return NotFound();
             }
-            return Ok(expense);
+            return Ok(expense.ToExpenseDto());
         }
     }
 }
