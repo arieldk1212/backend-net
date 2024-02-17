@@ -1,0 +1,14 @@
+1. export DOTNET_ROOT=$HOME/.dotnet/
+2. export PATH="$PATH:$HOME/.dotnet/tools"
+3. export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+
+added perm with -> nano ~/.bashrc
+
+dotnet ef migrations add <name>
+
+dotnet ef migrations remove
+
+dotnet ef database update
+
+to make sure gitignore works type git rm -rf --cached .
+then git add . , git commit...
